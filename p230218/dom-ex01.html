@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>element 찾아가기!</title>
+</head>
+<body>
+  <!-- div#txt.c_txt{Hello} -->
+  <div id="txt" class="c_txt">Hello</div>    
+  <div id="greeting" class="c_txt">안녕</div>    
+  <hr>
+  <script>
+    // 선택자: 아이디, 클래스, 태그
+    var id_data = document.getElementById('txt');
+    document.write('id_date >> ', id_data, '<br>');
+    console.log('id_date >> ', id_data);
+    
+    var class_data = document.getElementsByClassName('c_txt');
+    document.write('class_data >> ', class_data, '<br>');
+    console.log('class_data >> ', class_data); // 클래스는 여러번 사용가능해서 기본적으로 컬렉션 형태
+    console.log('class_data[0] >> ', class_data[0]); 
+    console.log('class_data[1] >> ', class_data[1]); 
+    console.log('class_data[0]["innerText"] >> ', class_data[0]['innerText']); 
+    console.log('class_data[0][innerHtml] >> ', class_data[0]['innerHtml']); 
+
+    var tag_data =  document.getElementsByTagName('div');
+    document.write('tag_date >> ', tag_data, '<br>');
+    console.log('tag_date >> ', tag_data);
+    </script>
+</body>
+</html>

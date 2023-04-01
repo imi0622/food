@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>callback함수</title>
+</head>
+<body>
+  <script>
+    var count = 1;
+
+    // 비동기
+    // [ setInterval] 어떤 코드를 일정시간 간격으로 반복 실행하고자 할때
+    // - 어떤 api로 부터 변경된 데이터를 주기적으로 받아와야 하는 경우
+    // - 문법: setInterval(코드(콜백), ms(시간));
+
+    // ★방법1 : js에서는 매개변수에 익명함수를 일회용으로 많이사용
+    // setInterval(function(){
+    //   console.log('...count:' , count);
+    //   count++;
+    // }, 3000);
+
+    // 방법2 ------------------------------------
+    function logTest(){
+      console.log('++count', count);
+      count++;
+    }
+    setInterval(logTest,3000);
+    console.log('>>>setInterval 실행이 끝나지 않아도 바로 실행됩니다.');
+    
+
+  </script>
+</body>
+</html>

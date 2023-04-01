@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>상품 페이지</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<style>
+  body {
+    text-align: center;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  .main-card button {
+    position: relative;
+    left: -45px;
+    bottom: 15px;
+  }
+
+  .favorites {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .favorites img {
+    width: 150px;
+  }
+</style>
+
+<body>
+  <div id="food-li-insert"> </div>
+  <!-- <h1>상품 1페이지</h1>
+    <form>
+        <input type="text" name="name" placeholder="상품명을 입력하세요" />
+        <button type="submit">추가</button>
+    </form>
+    -->
+  <script type="text/babel">
+    console.log("첫번째 리액트");
+    // 1)추가할 엘리먼트
+    // [react syntax] jsx(자바스크립트에 html문법작성)
+    // : js XML
+    // : react에서 html작성
+    // const 변수명 = (여러라인 HTML Tag);
+    // const 변수명 = 한라인 HTML Tag;
+    // ex) const title = <h1>제목이다</h1>;
+    const foodItem = (  // 자바스크립트의 문법
+      <li>
+        <img src="img/foot-one.jpg" alt="음식" />
+      </li>
+    );
+    // 2) 위 foodItem이 추가될 위치 지정
+    // const foodLiInsert = document.querySelector("#food-li-insert");
+    const foodLiInsert = document.getElementById("food-li-insert");
+
+    // 함수
+    function test(args) {
+      return "인수는 --> " + args + "입니다.";
+    }
+    // 변수
+    const hi = '오늘도 즐거운 하루';
+
+    // 기존h1  --> react변경
+    const title = <h1>상품 1페이지</h1>; //한라인은 () 생략가능
+    // 기존form  --> react변경
+    const form = (
+      <form>
+        <input type="text" name="name" placeholder="상품명을 입력하세요" />
+        <button type="submit">추가</button>
+      </form>
+    );
+    // 기존div  --> react변경
+    const mainCard = (
+      <div class="main-card">
+        <img src="img/foot-one.jpg" alt="올리브오일" width="400" />
+        <button>🤍</button>
+      </div>
+    );
+    // 기존 ul(favarites)  --> react변경
+    const favorites = (
+
+      <ul class="favorites">
+        {/*리액트 내에 js표현식은 {}중괄호 내에 작성
+*/}
+        {/* 1 + 3}
+        {"문자열"}
+        {test('재밌는 react') */}
+        {foodItem}
+        {foodItem}
+        {foodItem}
+      </ul>
+    );
+    // 여러개의 요소를 렌더링
+    const app = (// jsx는 부모가 하나여야한다. 형제관계만 있으면 안됨
+      <div>
+        {title}
+        {form}
+        {mainCard}
+        {favorites}
+      </div>
+    );
+
+    // 3) 리액트를 이용하여 엘리먼트 추가
+    // [17이전 버전]
+    // ReactDOM.render(추가할 엘리먼트, 추가할 위치);
+    // [18이전 버전]
+    // ReactDOM.createRoot(추가할 위치).render(추가할 엘리먼트);
+    // ReactDOM.createRoot(foodLiInsert).render(foodItem);
+    // ReactDOM.createRoot(foodLiInsert).render(favorites);
+    ReactDOM.createRoot(foodLiInsert).render(app);
+
+
+        // // 1. 좋아요 버튼 찾기
+        // const likeButton = document.querySelector(".main-card button");
+
+        // // 2. 좋아요 버튼 눌렀을 때 이벤트
+        // likeButton.addEventListener("click", function () {
+        //     // 3. 하트 색 변경
+        //     likeButton.innerHTML = "❤️";
+
+        //     // 4. 음식 이미지 추가 위치
+        //     const favorites = document.querySelector(".favorites");
+
+        //     // 5. 새 음식 이미지
+        //     const newFavoriteImage = document.createElement("img");
+        //     newFavoriteImage.src = "img/foot-one.jpg";
+
+        //     // 6. 이미지 감싸는 li태그 만들기
+        //     const li = document.createElement("li");
+
+        //     // 7. li태그에 음식 이미지 넣기
+        //     li.appendChild(newFavoriteImage);
+
+        //     // 8. 방금 만든 요소 넣기
+        //     favorites.appendChild(li);
+        // });
+  </script>
+</body>
+
+</html>

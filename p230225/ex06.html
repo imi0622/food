@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous">
+  </script>
+</head>
+<body>
+  <div id="outer">
+    <h1> 제목1</h1>
+    <div id="inner">
+      <h2>제목2</h2>
+      <ul id="itens">
+        <li class="item">항목1</li> 
+        <li class="item">항목2</li> 
+        <li class="last">항목3</li> 
+      </ul>
+    </div>
+    <input type="text" id="txt" value="default value">
+    <button type="button" id="btn">값 가져오기</button>
+    <button type="button" id="btnInput">값 설정하기</button>
+  </div>
+  <script>
+    /*
+    [jquery] 원하는 엘리먼트 선택, 변경, 값 가져오기----------
+    1. html함수 
+    - $('선택자').html()
+      : 선택자 내 자식 엘리먼트 통채로 읽어 옴
+      : 추출 -  여러개의 엘리먼트가 일치할 경우, 첫번째만!
+      : 설정 -  여러개의 엘리먼트가 일치할 경우, 모든 엘리먼트에 설정(html태그 그대로 설정됨)
+      : 동적처리
+    
+    2. text함수
+    - $('선택자').text()
+      : 선택자 나ㅐ의 자식 엘리먼트를 포함. 모두 문자열로 읽어 옴
+      : 추출 -  여러개의 엘리먼트가 일치할 경우, 모두!
+      : 설정 -  여러개의 엘리먼트가 일치할 경우, 모든 엘리먼트에 설정(html태그도 문자열로 설정)
+
+    3. val함수
+    - $('선택자').val()
+      : input엘리먼트에 정의 된 value속성값 사용할 때
+      */
+
+   // $(함수); 바로 함수를 실행
+
+   // <추출>
+   $(function(){
+    var html = $('.item').html();
+    var text = $('.item').text();
+    var val = $('#txt').val();
+    console.log('$(함수); [jQuery] 바로 실행');
+    console.log(html);
+    console.log(text);
+    console.log(val);
+    console.log('typeof html >> ', typeof html);
+    console.log('typeof text >> ', typeof text);
+
+    // <설정>
+    // $('.item').html('<strong>ADD</strong>'); // condent로 태그설정
+    $('.item').text('<strong>ADD</strong>');   // 텍스트값으로 설정
+    $('#txt').val('설정값');   // 텍스트값으로 설정
+   });
+   
+  </script>
+</body>
+</html>

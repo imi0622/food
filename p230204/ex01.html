@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[문제 1 : if문] </title>
+</head>
+<body>
+    <h1>[문제 1] : if문</h1>
+    <script>
+        var id = 'aaa';
+        var pw = '1234';
+        var inputId = prompt('아이디 입력');
+        var inputPw = prompt('패스워드 입력');
+        if((id == inputId) && (pw == inputPw)){
+            document.write('환영합니다.');
+        } else if(id == inputId) {
+            document.write('패스워드 확인 요망.');
+        } else if(pw == inputPw) {
+            document.write('아이디 확인 요망.');
+        } else
+            document.write('아이디와 패스워드를 다시 입력하세요.');
+
+    </script>
+</body>
+</html>

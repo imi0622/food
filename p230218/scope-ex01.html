@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scope</title>
+</head>
+<body>
+  <script>
+    var num =4;
+    if(num >4 ) {
+      // 지역변수 x --> 전역변수 0
+      // var local = 5;
+
+      // 지역변수 o
+      let local = 5;
+      console.log('local>>', local)
+      console.log('num>>', num)
+    }
+    console.log('[if문 밖]local>>', local)
+    console.log('[if문 밖]num>>', num)
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사용자 정의 함수</title>
+</head>
+<body>
+  <script>
+   // 1. 함수 정의
+   function avg(...args) {  // rest parameter
+    var total = 0; 
+    document.write('매개변수 args >> ', args);
+    document.write('<br>');
+
+    for(i=0; i<args.length; i++) { //arguments는 매개변수와 상관이 없다.
+      document.write('함수내 for문: arguments >>', args[i]);
+      document.write('<br>');
+      total += arguments[i];
+    }
+    document.write('함수내 총합 >>', total);
+    document.write('<br>');
+    // document.write('함수내 평균 >>', total/arguments.length);
+    var mean = (total/arguments.length).toFixed(2);
+    return mean;
+   }
+   // 함수호출
+   var result_avg = avg(2,3,5);
+   document.write('avg(2,3,5) 호출 결과 >>', result_avg);
+   // 매개변수를 함수 밖에서 접근
+  //  document.write('args >>', args);  //js는 인터프리터 언어. 에러가 발생한 라인 이후엔 처리되지 않음 
+
+   document.write('arguments.length >>', arguments.length);  // 인수를 받는 함수라
+   document.write('<br>');
+   document.write('<<실행완료>>>>');
+  </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous">
+  </script>
+</head>
+<body>
+  <h1>제목입니다.</h1>
+  <div id="nav" class="nav">
+    <ul>
+      <li>첫 번째</li>
+    </ul>
+  </div>
+  <script>
+    /* [jQuery기본 문법] $(선택자).동작함수();
+    1. var 변수명 : jQuery 리턴값 저장
+    2. $()        : 이름이 달러함수. 인수인 선택자에 해당하는 노드를 찾아서 리턴
+    3. 선택자     : 접근하고자 하는 element 지정
+    */
+ 
+    //  VAR 변수명 = $('선택자');  css의 선택자 문법과 동일하게 사용가능
+    // var divs = $('div');   태그 선택자
+    // var divs = $('#nav');  아이디 선택자
+    // var divs = $('.nav');  클래스 선택자
+    // var divs = $('body > div');  클래스 선택자
+    var divs = $('div#nav.nav');  
+    document.write(divs + '<br>');
+    console.log('**jQuery**');
+    console.log(divs);
+
+    // JS
+    // var js_divs = document.getElementsByTagName('div');
+    // var js_divs = document.getElementById('nav');
+    // var js_divs = document.querySelector('body > div');
+    var js_divs = document.querySelector('div#nav.nav');
+    document.write(js_divs + '<br>');
+    console.log('**js**');
+    console.log(js_divs);
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이벤트</title>
+  <!-- jquery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1 id="greeting">Hello~ hi~~~</h1>
+  <button type="button" onclick="textChange();">텍스트 변경</button>
+  <script>
+    function textChange(){
+      // 첫번째 방법
+      // document.getElementById('greeting').innerText = '오늘도 좋은 하루!';
+      // document.getElementById('greeting').style.background='#ff0';
+
+      // 두번째 방법
+      var element = document.getElementById('greeting');
+      // element.innerText = '오늘도 화이팅!';
+      element.style.background = '#00f';
+      // [JQuery 변경]
+      $('#greeting').html('평온한 하루!!');
+    }
+  </script>
+</body>
+</html>

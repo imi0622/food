@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>element 찾아가기</title>
+</head>
+<body>
+  <h2 id="title">제목</h2>
+  <p class="paragraph">첫 번째 단락</p>
+  <p class="paragraph">두 번째 단락</p>
+  <p class="paragraph">세 번째 단락</p>
+  <hr>
+  <script>
+  // 1. [ 단일 element 추출(반환) ]
+    // 1-1. getElementById('아이디')
+    var getElementById = document.getElementById('title');
+    document.write('1-1. getElementById >> ', getElementById, '<br>');  
+    console.log('1-1. getElementById >> ', getElementById) ;
+
+    document.write('1-1. getElementById[innerText] >> ', getElementById["innerText"], '<br>');  
+    console.log('1-1. getElementById.innerText >> ', getElementById.innerText) ;
+    getElementById['innerText'] = '변경된 제목';
+    getElementById.innerText = '변경된 제목2';
+    // 1-2. querySelector('선택자') : 해당요소의 첫번째만 추출
+    var querySelector = document.querySelector('.paragraph');
+    document.write('1-2. querySelector >>', querySelector,'<br>');
+    console.log('1-2. querySelector >>', querySelector);
+    querySelector.innerText = '첫 번째 요소만 변경합니다.';
+    querySelector.style.color = '#00f';
+
+  // 2. [ 복수 element 추출(반환) ]  
+    // 2-1. getElementsByClassName('클래스')
+    var getClassName = document.getElementsByClassName('paragraph');
+    document.write('2-1. getClassName >>', getClassName, '<br>');
+    console.log('2-1. getClassName >>', getClassName);
+    console.log('2-1. getClassName >>', getClassName[0]);
+    console.log('2-1. getClassName >>', getClassName[1]);
+    getClassName[2].style.backgroundColor ='#ff0';
+
+    // 2-2. getElementsByTagName('태그')
+    var getTagName = document.getElementsByTagName('p');
+    document.write('2-2. getTagName >>', getTagName, '<br>');
+    console.log('2-2. getTagName >>', getTagName);
+
+    // 2-3. getElementsByTagName('태그')
+    var queryAll = document.querySelectorAll('h2#title, p.paragraph');
+    document.write('2-3. queryAll >>', queryAll, '<br>');
+    console.log('2-3. queryAll >>', queryAll);
+    console.log('2-3. queryAll[0] >>', queryAll[0]);
+    console.log('2-3. queryAll[1] >>', queryAll[1]);
+    
+    queryAll[2].style.textAlign = 'center';
+
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 정의 함수</title>
+</head>
+<body>
+   <script>
+    /*
+    [매개변수 특징]
+    - 매개변수와 인수의 자료형이 동일한지 검사하지 않음
+    - 매개변수의ㅏ 개수와 인수의 개수가 같은지 검사하지 않음
+    - 매개변수의 개수가 인수의 개수보다 적으면 undefinded로 저장
+    */
+
+    // 함수 정의 전 호출
+    info();
+    info('홍길동');
+    info('홍길동', 25);
+    info('홍길동', 25, 'good day');
+    document.write('<br>');
+    // 함수 정의: 매개변수 있음, 리턴값 없음
+    function info(name, value) {  // 함수에 이름이 있는 함수(선언적 함수)는 정의가 어디에 되어 있어도 메모리에 저장되어있어 호출된다.
+      document.write('name >> ', name);
+      document.write('<br>');
+
+      document.write('value >> ', value);
+      document.write('<br>');
+      document.write('---------------------------<br>');
+
+    }
+   </script> 
+</body>
+</html>

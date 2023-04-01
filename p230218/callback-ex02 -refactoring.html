@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    [콜백함수]
+    - 함수 매개변수가 함수명을 받음 => 함수 내에서 함수 호출
+    - 함수 내부 처리 결과값을 외부 함수로 내보낼 떄 주로 사용
+    : return문과 비슷
+    - 비동기 함수 결과 값을 처리하기 위해 주로 사용
+    - [문법]
+      function함수명(callback) {
+        callback();
+      }
+    */
+
+    // 함수 선언식: 리턴(return) 사용
+
+    function add(num1, num2, addResultTwo){  
+      var result = num1 + num2;
+      addResultTwo(result); // 호출
+    }
+
+    function addResult(value){
+      console.log('덧셈결과>>', value);
+    }
+
+    // 함수 호출
+    // add(3,5, function addResult(value));
+    add(3,5, function addResult(value));
+  </script>
+</body>
+</html>

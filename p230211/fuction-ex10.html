@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수 인수로 함수명 가능</title>
+</head>
+<body>
+  <script>
+    // js는 인수에 함수명을 넣어 호출할 수 있다.
+    // [함수정의] ------------------------------
+    function hello() {
+      console.log('hello~~~');
+    }
+    function hi() {
+      console.log('hi!!');
+    }
+    function excute(args) {
+      console.log('excute 함수 실행 시작')
+      args();
+      console.log('excute 함수 실행 종료')
+    }
+    // [함수호출] ------------------------------
+    excute(hello);
+    excute(hi);
+  </script>
+</body>
+</html>

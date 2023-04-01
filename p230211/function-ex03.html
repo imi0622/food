@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 정의 함수</title>
+</head>
+<body>
+   <script>
+    /*
+    [사용자 정의 함수]
+    function 함수명(매개변수1, 매개변수2) {
+      명령어;
+      return 값;
+    }
+
+    [return의 의미]
+    - 함수 실행 끝
+    - 호출한 쪽으로 리턴값을 넘김
+
+    [ 실행의 끝 ]
+    - return
+    - body의 }
+    
+    */
+    // 함수 정의 전 호출
+    document.write('함수 정의전 호출 >> ', stringReturn());
+    document.write('<br>');
+    // 함수 정의: 매개변수 없음, 리턴값 있음
+    function stringReturn() {  // 함수에 이름이 있는 함수(선언적 함수)는 정의가 어디에 되어 있어도 메모리에 저장되어있어 호출된다.
+      return '즐거운 하루';
+      document.write('stringReturn() 실행 끝');
+
+    }
+    // 2. 함수 정의 후 호출
+    // document.write('함수 정의 후 hi() 호출');
+    // document.write('<br>');
+    // hi();
+   </script> 
+</body>
+</html>

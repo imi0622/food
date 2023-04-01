@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사용자 정의 함수</title>
+</head>
+<body>
+  <script>
+  
+    hi('박보검');
+    // [선언적 함수] 일반함수--------------
+    // 함수 정의 전에 호출 가능: 글로벌 영역안에 들어있어서
+    // 함수 호출시기에 제한이 없음
+    function hi(name) {
+      console.log(name + '님, 안녕하세요!!');
+    }
+    
+    hi('홍길동');
+    
+    /* [익명 함수] 함수 리터럴 --------------
+    // 함수 정의 전에 호출 불가능
+    // hello('곰돌이');  >>> error~
+
+    [point!] 익명함수는 함수를 정의하기전에 호출할 수 없음
+    -  초기화되지 않아서
+    - js는 전체 전역(global)변수 먼저 읽고(메모리에 올라감) 순서대로 진행되어서 처음 hello는 전역변수로 undefined -> 초기화 되지 않았다. 라고 나옴.  
+    // 전역변수 해당변수가 저장된 라인이 실행되어야 지역변수로 값이 들어가고 실행 후에 스택에서 삭제됨.
+    */
+    var hello = function(name) { // (변수에 익명함수의 주소값이 저장된 것과 같다. (변수가 익명함수의 함수명처럼 쓰인다.)
+      console.log(name + '님, 안녕~');
+    }
+    
+    hello('이미자');
+    var new_hello = hello
+    new_hello('새이름');
+    
+    // [즉시 실행함수]: 익명함수인데 일회용으로 즉시실행
+    (function(name) { 
+      console.log(name + '님, 또 만나 반가워요~');
+    })('멍멍이');
+    
+  </script>
+</body>
+</html>

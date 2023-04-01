@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클로저: 함수 선언식과 비교</title>
+</head>
+<body>
+  <script>
+    /*
+    [클로저] closure:함수와 함수가 선언된 *어휘적(Lexical) 환경의 조합
+    - 함수 내부에서 만든 지역변수가 사라지지 않고, 계속 유지하는 상태(static)
+    - 클로저는 "함수"와 그 함수가 선언되었을 때의 '렉시컬 환경'과의 조합
+    cf)렉시컬 환경: 내부함수가 선언되었을 때의 스코프
+
+    - 장점: 전역변수를 줄일 수 있음
+    */
+   // [함수선언식 fuction declearations]
+    function addCount(){
+      // 지역변수
+      var count = 0; 
+      return count++;
+      // 함수호출
+      for(let i=1; i<4; i++)
+      console.log(i + "번 addCount()호출 >> "+ addCount());
+      
+    }
+    addCount();
+
+  </script>
+</body>
+</html>

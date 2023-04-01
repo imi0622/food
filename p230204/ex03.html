@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[문제 3 : 반복문]</title>
+</head>
+<body>
+    <h1>[문제 3] : 반복문</h1>
+    <script>
+      var data = [2, 4, 6, 8];
+      var result = 0;
+      // for(var i = 0; i<data.length; i++){
+      //   result += data[i];
+      // }
+
+      //for of문: 실제값을 확인
+      for(var num of data) {
+        result += num;
+        }
+      document.write(result); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scope</title>
+</head>
+<body>
+  <script>
+    /*
+    [호이스팅] Hoisting
+    선언된 것을 유효범위의 최상단에 선언(끌어올림)
+    */
+   
+    // 전역변수
+    var a_one = 1;
+    // [함수정의] 함수 선언식
+    function scope_test() {
+      // 지역변수
+      var a_function_one = 2;
+      console.log('[함수레벨 스코프] >> ', a_function_one);
+
+      var a_block_one = 3;
+      console.log('[블록레벨 스코프] >> ', a_block_one);
+
+      if(a_one == 1) {
+        var a_function_two = 20;
+        console.log('[함수레벨 스코프] if문 선언 >> ', a_function_two);
+
+        let a_block_two = 30;
+        console.log('[블록레벨 스코프] if문 선언 >> ', a_block_two);
+      }
+      console.log('[함수레벨 스코프] if문 밖선언 >> ', a_function_two);
+      console.log('[블록레벨 스코프] if문 밖선언 >> ', a_block_two);
+    }
+    scope_test();
+    
+  </script>
+</body>
+</html>

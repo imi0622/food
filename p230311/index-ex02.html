@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>상품 페이지</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<style>
+  body {
+    text-align: center;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  .main-card button {
+    position: relative;
+    left: -45px;
+    bottom: 15px;
+  }
+
+  .favorites {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .favorites img {
+    width: 150px;
+  }
+</style>
+
+<body>
+  <div id="food-li-insert"> </div>
+  <script type="text/babel">
+    // 1)추가할 엘리먼트
+    // [react syntax] jsx(자바스크립트에 html문법작성)
+    // : js XML
+    // : react에서 html작성
+    // const 변수명 = (여러라인 HTML Tag);
+    // const 변수명 = 한라인 HTML Tag;
+    // ex) const title = <h1>제목이다</h1>;
+
+
+    // 기존h1  --> react변경
+    // const title = <h1>상품 1페이지</h1>; //한라인은 () 생략가능
+    //★★★title --> companent변경★★★
+    function Title(props) { //클래스네임으로 첫글자 대문자로
+      console.log(props);
+      // return <h1>상품 1페이지</h1>;
+      return <h1>{props.children}</h1>;
+    }
+
+    // 기존form  --> react변경
+    /*  const form = (
+       <form>
+         <input type="text" name="name" placeholder="상품명을 입력하세요" />
+         <button type="submit">추가</button>
+       </form>
+     ); */
+    //★★★Form --> companent변경★★★
+    const Form = () => {  //함수가처리 될때 값이 메모리에 들어감
+      return (
+        <form>
+          <input type="text" name="name" placeholder="상품명을 입력하세요" />
+          <button type="submit">추가</button>
+        </form>
+      );
+    }
+
+    // 기존div  --> react변경
+    /*    const mainCard = (
+         <div className="main-card">
+           <img src="img/foot-one.jpg" alt="올리브오일" width="400" />
+           <button>🤍</button>
+         </div>
+       ); */
+    /*   //★★★mainCard --> companent변경★★★
+      function MainCard() {
+        return (
+          <div className="main-card">
+            <img src="img/foot-one.jpg" alt="올리브오일" width="400" />
+            <button>🤍</button>
+          </div>
+        );
+      } */
+    // 위에코드를 좀더 간결하게 (메모리에 올라가는 시기가 다름: 코드처리 될때)
+    const MainCard = ({ img }) => { //화살표(애로우)함수: 자바의 람다식과 비슷
+      function handleHeartClick() {
+        console.log("하트 클릭함!");
+      }
+      function handleHeartMouserOver() {
+        console.log("하트 스쳐지나감!");
+      }
+      return ( //호출하기위해 변수에 저장
+        <div className="main-card">
+          <img
+            //src="img/foot-one.jpg" 
+            // src={props.img}
+            src={img}
+            alt="올리브오일" width="400" />
+          <button onClick={handleHeartClick} onMouseOver={handleHeartMouserOver}>🤍</button>
+        </div>
+      );
+    }
+
+    // // 기존 ul(favarites)  --> react변경
+    // const foodItem = (
+    //   <li>
+    //     <img src="img/foot-one.jpg" alt="음식" />
+    //   </li>
+    // );
+
+    //★★★foodItem --> companent변경★★★
+    function FoodItem(props) {  // 매개변수 이름은 관용적으로 props로 표현
+      return (
+        <li>
+          <img src={props.img} alt={props.title} style={{ width: "150px", border: "2px solid #f00" }} />
+        </li>
+      );
+    }
+    // const favorites = (
+    //   <ul className="favorites">
+    //     {/* FoodItem("img/foot-one.jpg") */}
+    //     <FoodItem img="img/foot-one.jpg" title="이미지1" />
+    //     <FoodItem img="img/foot-two.jpg" title="이미지2" />
+    //     <FoodItem img="img/foot-three.jpg" title="이미지3" />
+    //   </ul>
+    // );
+
+    // 여러개의 요소를 렌더링
+    const app = (// jsx는 부모가 하나여야한다. 형제관계만 있으면 안됨
+      <div>
+        {/* title */}
+        {/* form */}
+        {/* mainCard */}
+        {/* favorites */}
+        {/* <Title/> */}
+        <Title>페이지1 </Title>
+        <Form />
+        <MainCard img="img/foot-three.jpg" />
+        <Favorites />
+      </div>
+    );
+    //★★★foodItem --> companent변경★★★
+    function Favorites() {
+      return (
+        <ul className="favorites">
+          <FoodItem img="img/foot-one.jpg" title="이미지1" />
+          <FoodItem img="img/foot-two.jpg" title="이미지2" />
+          <FoodItem img="img/foot-three.jpg" title="이미지3" />
+        </ul>
+      );
+    }
+    // 엘리먼트가 추가될 위치 지정
+    const foodLiInsert = document.getElementById("food-li-insert");
+
+    // 리액트를 이용하여 엘리먼트 추가
+    ReactDOM.createRoot(foodLiInsert).render(app);
+  </script>
+</body>
+
+</html>

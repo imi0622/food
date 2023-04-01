@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous">
+  </script>
+</head>
+<body>
+  <div id="hello">안녕하세요! 좋은 오후!</div>
+  <div class="btn">
+    <button type="button" name="button" id="btn_check" onclick="change();">클릭하세요</button>
+  </div>
+  <script>
+    //jQuery
+    // $('#btn_check').click(
+    //   function() {
+    //     // 1. 스타일 1개씩 지정
+    //     $('#hello').css('background','#ff0');
+    //     $('#hello').css('border','4px solid #00f');
+
+    //     // 2. 스타일 여러개 지정 {속성:값, 속성:값}
+    //     $('#hello').css({
+    //       'background':'#eee', 'border':'2px solid #0ff'
+    //     });
+    //   }
+    // );
+
+    // JS
+
+    // 함수 선언식
+    function change(){
+      var div_hello = document.getElementById('hello');
+      // 1. 스타일 1개씩 지정(기존에 정의된 style에 새로운 속성 추가)
+      div_hello.style.background = '#ff0';
+      div_hello.style.border = '4px solid #00f';
+
+      // 2. 스타일 여러개 지정(기존 정의 된 스타일을 지우고, cssText로 덮어 씀 ) style.cssText = '속성:값; 속성:값';
+      //text.style.cssText = 'background: #ff0; color: #00f';
+    }
+
+    // 함수 표현식
+    var s_change = function() {
+      
+    }
+
+  </script>
+</body>
+</html>

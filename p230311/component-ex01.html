@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>컴포넌트</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <h1 class="text"> </h1>
+  <div class="card"></div>
+  <hr>
+  <script type="text/babel">
+    // 함수 정의 
+    function greeting(name) {
+      return '안녕하세요~ ' + name + '님';
+    }
+    // 호출되나 화면에 표현되지 않는다. 
+    greeting('홍길동');
+    // 위치지정
+    const insert = document.querySelector(".text");
+    // 추가할 엘리먼트
+    const txt = <div>{greeting('홍길동')}</div>;
+    // 컴포넌트: 첫문자가 대문자
+    function Card(title, dscription) {
+      return (
+        <div>
+          <h2>{title}</h2>
+          {description}
+        </div>
+      );
+    }
+    // 함수 호출
+    Card('신기한 리액트', ' 재밌군요!');
+    // 리액트는 위 함수를 태그처럼 사용할 수 있는 문법 제공(직관적)
+    <Card title='신기한 리액트' dscription='재밌군요!' />
+    // 리액트를 이용하여 엘리먼트 추가
+    ReactDOM.createRoot(insert).render(txt);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[확인창]</title>
+</head>
+<body>
+    <h1>확인창</h1>
+    <script>
+        // 문제: "확인 버튼을 클릭하면, 리턴값은 true이고 확인을 눌렀습니다.
+        //       취소 버튼을 클릭하면, 리턴값은 false이고 취소를 눌렀습니다. "를 화면에 출력
+
+        var answer = confirm('입력을 완료했나요?');
+        if (answer) 
+        document.write('리턴값은' + answer +'이고 확인을 눌렀습니다.');
+        else
+        document.write('리턴값은' + answer +'이고 취소를 눌렀습니다');
+    </script>
+</body>
+</html>

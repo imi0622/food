@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[반복문] 무한루프</title>
+</head>
+<body>
+    <h1>[반복문] 무한루프</h1>
+    <script>
+        // while을 무한 루프로 구현하여 1~10을 출력
+        var num = 1; //초기값
+       while(true) { //조건식
+        document.write(num);
+        document.write('<br>');
+        if(num == 10)
+        break;
+        num++;  //증감식
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1 id="greeting">Hello~~~</h1>
+  <button type="'button" onclick="textChange();">텍스트 변경</button>
+  <button type="'button" id="clear" onclick="textBefore();">원래 상태로 변경</button>
+  <!-- <input type="'button" value="버튼"></input> -->
+  <hr>
+  <script>
+    var greeting = document.getElementById('greeting');
+    // 1. id가 greeting인 h1 element에 접근
+    console.log(greeting);
+    document.write(greeting + '<br>');
+    
+    // 2. id가 greeting인 h1 element의 content 접근
+    console.log(greeting.innerText);
+    document.write(greeting.innerText + '<br>');
+
+    // 3. id가 greeting인 h1 element의 content 값변경
+    // greeting.innerText = '좋은 아침!';
+
+    // 4. 함수 선언식(선언적(일반) 함수)
+    // cf)함수 표현식
+    function textChange() {
+      // 첫번째 방법
+      // document.getElementById('greeting').innerText='오늘도 좋은 하루!';
+      // document.getElementById('greeting').style.background='skyblue';
+
+      // 두번째 방법
+      var element = document.getElementById('greeting');
+      element.innerText = '오늘도 좋은하루';
+      element.style.background = '#0dd';
+
+      // [jQuery 변경]
+      // $('#greeting').html('만나서 반가워요!')
+    }
+    function textBefore() {
+      var element = document.getElementById('greeting');
+      element.innerText = 'Hello~~~';
+      element.style.background = 'transparent';  // 초기화상태: 'initial'도 가능(익스에서 지원이 잘 안됨)
+    }
+  </script>
+</body>
+</html>

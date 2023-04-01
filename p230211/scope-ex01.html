@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[변수의 종류] scope</title>
+</head>
+<body>
+  <script>
+    /*
+    [scopt] scope란 변수의 유효범위를 나타내는 용어
+    - 전역(global) 스코프
+    : 어디서든지 접근 가능, <script> 내 선언된 변수
+    - 지역(local) 스코프
+    : 해당 영역 내에서만 접근 가능, {} 내 선언된 변수
+    : function leval scope(함수 레벨이 기본) - var
+    : block leval scope - let
+    */
+
+    // [전역변수]
+    var a_global = 1;
+
+    // 함수 정의
+    function scope_test() {
+      console.log('[전역변수] a_global >>', a_global);
+      
+      // [지역변수]
+      var a_local_one = 10;
+      console.log('[지역변수] a_local_one >>', a_local_one);
+      
+      if(a_global == 1) {
+        // [지역변수]
+        var a_local_two = 100;
+        console.log('[지역변수] a_local_two >>', a_local_two);
+      }
+      console.log('[지역변수] if문 밖에서 a_local_two 접근 >>', a_global_two);
+
+    }
+    //함수 호출
+    scope_test();
+    console.log('[지역변수] scope_test 밖에서 a_local_one 접근>>', a_local_one);
+
+   
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클로저</title>
+</head>
+<body>
+  <script>
+    /*
+    [클로저] closure:함수와 함수가 선언된 *어휘적(Lexical) 환경의 조합
+    - 함수 내부에서 만든 지역변수가 사라지지 않고, 계속 유지하는 상태(static)
+    - 클로저는 "함수"와 그 함수가 선언되었을 때의 '렉시컬 환경'과의 조합
+    cf)렉시컬 환경: 내부함수가 선언되었을 때의 스코프
+
+    - 장점: 전역변수를 줄일 수 있음
+    */
+    function outer(){  //지역변수 outer와 내부함수inner를 생성
+      // [클로저]
+      var count = 1; // 자유변수(정적static)
+
+      return function inner() {  //내부함수 inner에 자신만의 지역변수가 없어, 부모함수 outer에 선언된 부모변수 count에 접근할 수 있다. 만약 자신만의 내부변수를 가지고 있었다면 inner함수의 내부변수를 사용.
+        count++; //외부함수의 값 사용
+        console.log('count>>', count);
+      }
+      // return inner;
+    }
+    var result =  outer();
+    //inner함수호출
+    result();
+    result();
+    result();
+    result();
+  </script>
+</body>
+</html>

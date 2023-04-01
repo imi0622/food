@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous">
+  </script>
+  <style>
+    h1{
+      width: 350px;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      background-color: #eee;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <!-- <h1 onclick="btn();">jquery  예제</h1> -->
+    <h1 id="click">jquery  예제</h1>
+    <h2>menu2의 li태그 내 텍스트 색변경</h2>
+  </div>
+  <ul id="menu1" class="menu">
+    <li>menu1-1</li>
+    <li>menu1-2</li>
+    <li>menu1-3</li>
+    <li>menu1-4</li>
+    <li>menu1-5</li>
+    <li>menu1-6</li>
+    <li>menu1-7</li>
+  </ul>
+  <ul id="menu2" class="menu">
+    <li>menu2-1</li>
+    <li>menu2-2</li>
+    <li>menu2-3</li>
+    <li>menu2-4</li>
+    <li>menu2-5</li>
+    <li>menu2-6</li>
+    <li>menu2-7</li>
+  </ul>
+  <script>
+    // [jQuery]
+    $('#click').click(
+      function() {
+        $('#menu2 > li').css({'color':'#f0f','fontWeight' : 'bold'});
+      }
+    )
+    
+    // [Js 함수 표현식]
+    var btn = function() {
+      var btn = document.querySelectorAll('#menu2 > li');
+      console.log('li_list');
+      console.log(btn);
+      for(let n of li_list){
+          n.style.fontWeight = 'bold';
+          n.style.color = '#f00';
+      }
+    }
+    // [함수 선언식]
+    // function btn(){
+    //   for(let n of li_list){
+    //       n.style.fontWeight = 'bold';
+    //       n.style.color = '#f00';
+    //   }
+    // } 
+
+    // 1-1. menu2엘리먼트 접근
+    var menu2 = document.getElementById('menu2');
+    console.log(menu2);
+    
+    // 1-2. menu2에 li 엘리먼트 접근
+    var li_list = menu2.getElementsByTagName('li');
+    document.write(li_list);
+    console.log(li_list);
+    console.log(typeof li_list);
+    
+    // 1-3. li_list의 색 변경
+    // li_list[0].style.background = '#eee';
+    // for(let i=0; i<li_list.length; i++) {
+      //   li_list[i].style.background = '#eee';
+      //   li_list[i].style.fontWeight = 'bold';
+      // }
+
+      //  for in문: property속성의 key이름(index)을 출력한다.
+      console.log('*for in문********');
+      for(let n in li_list){
+        console.log(n);
+      }
+      //  for of문: property속성의 value값을 출력한다.
+      console.log('*for of문********');
+      for(let n of li_list){
+        console.log(n);
+      }
+      
+
+
+  </script>
+</body>
+</html>

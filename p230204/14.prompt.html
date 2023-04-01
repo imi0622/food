@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력창</title>
+</head>
+<body>
+    <h1>입력창</h1>
+    <script>
+        // var answer = prompt('오늘 기분이 어떤가요??');
+        // document.write('답변은... ', answer +'<br>');
+        
+        //문제: prompt함수를 이용하여, 정수 1개를 입력 받은 후 1증가된 값을 출력
+        var answer = prompt('정수 1개를 입력하세요');
+        answer = parseInt(answer);
+        document.write('입력 값은 : ', answer + ' / 자료형은 : ', typeof answer,'<br>');
+        // answer = parseInt(answer);
+        // answer = Number(answer);
+        document.write('1증가된 값은 ', answer+1 , '입니다.');
+
+    </script>
+</body>
+</html>
